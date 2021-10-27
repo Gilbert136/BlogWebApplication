@@ -8,24 +8,30 @@
     "net5.0": []
   },
   "packageFolders": {
-    "/home/gilbert/.nuget/packages/": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Service/BlogWebApplication.Service.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Service\\BlogWebApplication.Service.csproj",
       "projectName": "BlogWebApplication.Service",
-      "projectPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Service/BlogWebApplication.Service.csproj",
-      "packagesPath": "/home/gilbert/.nuget/packages/",
-      "outputPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Service/obj/",
+      "projectPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Service\\BlogWebApplication.Service.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Service\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/gilbert/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

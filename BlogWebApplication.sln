@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWebApplication.Data", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWebApplication.Service", "BlogWebApplication.Service\BlogWebApplication.Service.csproj", "{994F26C5-B584-452F-BD3A-FFA12032CA79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWebApplication", "BlogWebApplication\BlogWebApplication.csproj", "{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{994F26C5-B584-452F-BD3A-FFA12032CA79}.Release|x64.Build.0 = Release|Any CPU
 		{994F26C5-B584-452F-BD3A-FFA12032CA79}.Release|x86.ActiveCfg = Release|Any CPU
 		{994F26C5-B584-452F-BD3A-FFA12032CA79}.Release|x86.Build.0 = Release|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Debug|x64.Build.0 = Debug|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Debug|x86.Build.0 = Debug|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Release|x64.ActiveCfg = Release|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Release|x64.Build.0 = Release|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Release|x86.ActiveCfg = Release|Any CPU
+		{9EC5DDCD-0C8B-44C8-AB74-2A02D170950C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
