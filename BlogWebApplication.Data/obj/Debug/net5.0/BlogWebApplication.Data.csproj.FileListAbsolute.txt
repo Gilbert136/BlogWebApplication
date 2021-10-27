@@ -1,0 +1,15 @@
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/bin/Debug/net5.0/BlogWebApplication.Data.deps.json
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/bin/Debug/net5.0/BlogWebApplication.Data.runtimeconfig.json
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/bin/Debug/net5.0/BlogWebApplication.Data.runtimeconfig.dev.json
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/bin/Debug/net5.0/BlogWebApplication.Data.dll
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/bin/Debug/net5.0/ref/BlogWebApplication.Data.dll
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/bin/Debug/net5.0/BlogWebApplication.Data.pdb
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/Debug/net5.0/BlogWebApplication.Data.csproj.AssemblyReference.cache
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/Debug/net5.0/BlogWebApplication.Data.GeneratedMSBuildEditorConfig.editorconfig
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/Debug/net5.0/BlogWebApplication.Data.AssemblyInfoInputs.cache
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/Debug/net5.0/BlogWebApplication.Data.AssemblyInfo.cs
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/Debug/net5.0/BlogWebApplication.Data.csproj.CoreCompileInputs.cache
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/Debug/net5.0/BlogWebApplication.Data.dll
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/Debug/net5.0/ref/BlogWebApplication.Data.dll
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/Debug/net5.0/BlogWebApplication.Data.pdb
+/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/Debug/net5.0/BlogWebApplication.Data.genruntimeconfig.cache
