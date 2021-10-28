@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication\\BlogWebApplication.csproj": {}
+    "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/BlogWebApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Data\\BlogWebApplication.Data.csproj": {
+    "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/BlogWebApplication.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Data\\BlogWebApplication.Data.csproj",
+        "projectUniqueName": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/BlogWebApplication.Data.csproj",
         "projectName": "BlogWebApplication.Data",
-        "projectPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Data\\BlogWebApplication.Data.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Data\\obj\\",
+        "projectPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/BlogWebApplication.Data.csproj",
+        "packagesPath": "/home/gilbert/.nuget/packages/",
+        "outputPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/gilbert/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -79,31 +74,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Service\\BlogWebApplication.Service.csproj": {
+    "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Service/BlogWebApplication.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Service\\BlogWebApplication.Service.csproj",
+        "projectUniqueName": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Service/BlogWebApplication.Service.csproj",
         "projectName": "BlogWebApplication.Service",
-        "projectPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Service\\BlogWebApplication.Service.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Service\\obj\\",
+        "projectPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Service/BlogWebApplication.Service.csproj",
+        "packagesPath": "/home/gilbert/.nuget/packages/",
+        "outputPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Service/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/gilbert/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -136,42 +126,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication\\BlogWebApplication.csproj": {
+    "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/BlogWebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication\\BlogWebApplication.csproj",
+        "projectUniqueName": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/BlogWebApplication.csproj",
         "projectName": "BlogWebApplication",
-        "projectPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication\\BlogWebApplication.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication\\obj\\",
+        "projectPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/BlogWebApplication.csproj",
+        "packagesPath": "/home/gilbert/.nuget/packages/",
+        "outputPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/gilbert/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Data\\BlogWebApplication.Data.csproj": {
-                "projectPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Data\\BlogWebApplication.Data.csproj"
+              "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/BlogWebApplication.Data.csproj": {
+                "projectPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Data/BlogWebApplication.Data.csproj"
               },
-              "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Service\\BlogWebApplication.Service.csproj": {
-                "projectPath": "C:\\Users\\Dell\\Source\\Repos\\BlogWebApplication\\BlogWebApplication.Service\\BlogWebApplication.Service.csproj"
+              "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Service/BlogWebApplication.Service.csproj": {
+                "projectPath": "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication.Service/BlogWebApplication.Service.csproj"
               }
             }
           }
@@ -191,6 +176,10 @@
               "version": "[5.0.11, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[5.0.11, )"
             },
@@ -229,7 +218,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
         }
       }
     }
