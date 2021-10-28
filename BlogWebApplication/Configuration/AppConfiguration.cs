@@ -21,6 +21,7 @@ namespace BlogWebApplication.Configuration{
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -28,6 +29,7 @@ namespace BlogWebApplication.Configuration{
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
