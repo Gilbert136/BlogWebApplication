@@ -738,7 +738,6 @@ C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\Components\Navigation\Default.cshtml.g.cs
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
@@ -824,3 +823,10 @@ C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Admin\_Layout.cshtml.g.cs
+C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\Components\AdminFooter\Default.cshtml.g.cs
+C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\Components\AdminSideNav\Default.cshtml.g.cs
+C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\Components\AdminTopNav\Default.cshtml.g.cs
+C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Home\_Layout.cshtml.g.cs
+C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\obj\Debug\net5.0\Razor\Views\Shared\_IdentityLayout.cshtml.g.cs
