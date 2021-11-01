@@ -21,3 +21,4 @@ C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Service\obj\Deb
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Service\obj\Debug\net5.0\BlogWebApplication.Service.dll
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Service\obj\Debug\net5.0\ref\BlogWebApplication.Service.dll
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Service\obj\Debug\net5.0\BlogWebApplication.Service.pdb
+C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Service\obj\Debug\net5.0\BlogWebApplication.Service.csproj.AssemblyReference.cache

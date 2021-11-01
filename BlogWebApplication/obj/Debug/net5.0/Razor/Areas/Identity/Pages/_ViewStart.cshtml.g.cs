@@ -13,28 +13,28 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Areas/Identity/Pages/_ViewImports.cshtml"
+#line 1 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Areas\Identity\Pages\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Areas/Identity/Pages/_ViewImports.cshtml"
+#line 2 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Areas\Identity\Pages\_ViewImports.cshtml"
 using BlogWebApplication.Areas.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Areas/Identity/Pages/_ViewImports.cshtml"
+#line 3 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Areas\Identity\Pages\_ViewImports.cshtml"
 using BlogWebApplication.Areas.Identity.Pages;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Areas/Identity/Pages/_ViewImports.cshtml"
+#line 5 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Areas\Identity\Pages\_ViewImports.cshtml"
 using BlogWebApplication.Data.Models;
 
 #line default
@@ -47,9 +47,9 @@ using BlogWebApplication.Data.Models;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            WriteLiteral("\n");
+            WriteLiteral("\r\n");
 #nullable restore
-#line 2 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Areas/Identity/Pages/_ViewStart.cshtml"
+#line 2 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Areas\Identity\Pages\_ViewStart.cshtml"
   
     Layout = "/Views/Shared/_IdentityLayout.cshtml";
 

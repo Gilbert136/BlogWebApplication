@@ -27,3 +27,4 @@ C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Data\obj\Debug\
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Data\obj\Debug\net5.0\ref\BlogWebApplication.Data.dll
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Data\obj\Debug\net5.0\BlogWebApplication.Data.pdb
 C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Data\obj\Debug\net5.0\BlogWebApplication.Data.genruntimeconfig.cache
+C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication.Data\obj\Debug\net5.0\BlogWebApplication.Data.csproj.AssemblyReference.cache

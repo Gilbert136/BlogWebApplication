@@ -13,28 +13,28 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Views/_ViewImports.cshtml"
+#line 1 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Views\_ViewImports.cshtml"
 using BlogWebApplication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Views/_ViewImports.cshtml"
+#line 2 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Views\_ViewImports.cshtml"
 using BlogWebApplication.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Views/Shared/_LoginPartial.cshtml"
+#line 1 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Views\Shared\_LoginPartial.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Views/Shared/_LoginPartial.cshtml"
+#line 2 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Views\Shared\_LoginPartial.cshtml"
 using BlogWebApplication.Data.Models;
 
 #line default
@@ -80,9 +80,9 @@ using BlogWebApplication.Data.Models;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            WriteLiteral("\n");
+            WriteLiteral("\r\n");
 #nullable restore
-#line 6 "/home/gilbert/Documents/BlogWebApplication/BlogWebApplication/Views/Shared/_LoginPartial.cshtml"
+#line 6 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Views\Shared\_LoginPartial.cshtml"
  if (SignInManager.IsSignedIn(User))
 {
 
@@ -99,7 +99,7 @@ using BlogWebApplication.Data.Models;
 #line default
 #line hidden
 #nullable disable
-                WriteLiteral(".FirstName !");
+                WriteLiteral("!");
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
@@ -155,7 +155,7 @@ using BlogWebApplication.Data.Models;
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            WriteLiteral("\n    </li>\n");
+            WriteLiteral("\r\n    </li>\r\n");
 #nullable restore
 #line 17 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Views\Shared\_LoginPartial.cshtml"
 }
@@ -203,7 +203,7 @@ else
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            WriteLiteral("\n    </li>\n");
+            WriteLiteral("\r\n    </li>\r\n");
 #nullable restore
 #line 26 "C:\Users\Dell\Source\Repos\BlogWebApplication\BlogWebApplication\Views\Shared\_LoginPartial.cshtml"
 }
