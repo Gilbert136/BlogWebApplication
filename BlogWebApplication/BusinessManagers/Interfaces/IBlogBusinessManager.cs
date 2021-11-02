@@ -1,11 +1,12 @@
 using BlogWebApplication.Data.Models;
 using BlogWebApplication.Models.BlogViewModels;
-using BlogWebApplication.BusinessManagers.Interface;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace BlogWebApplication.BusinessManagers
 {
     public interface IBlogBusinessManager
     {
-        Task<Blog> CreateBlog(CreateBlogViewModel createBlogViewModel, ClaimsPrincipal claimPrincipal);
+        Task<Blog> CreateBlog(CreateBlogViewModel createBlogViewModel, ClaimsPrincipal claimsPrincipal);
     }
 }

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using BlogWebApplication.Data.Models;
 using BlogWebApplication.BusinessManagers;
-using BlogWebApplication.BusinessManagers.Interfaces;
 using BlogWebApplication.Service;
 using BlogWebApplication.Service.Interfaces;
+using BlogWebApplication.BusinessManager;
 
 namespace BlogWebApplication.Configuration{
     public static class AppServices{

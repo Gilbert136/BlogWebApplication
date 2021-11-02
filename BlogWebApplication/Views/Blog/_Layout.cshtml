@@ -18,9 +18,7 @@
             @await Component.InvokeAsync("AdminSideNav")
         </div>
         <div id="layoutSidenav_content">
-            <main>
-                @RenderBody()
-            </main>
+
             @await Component.InvokeAsync("AdminFooter")
         </div>
     </div>
@@ -31,5 +29,6 @@
     <script src="~/assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="~/js/datatables-simple-demo.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
