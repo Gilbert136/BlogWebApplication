@@ -4,6 +4,10 @@ using BlogWebApplication.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using BlogWebApplication.Data.Models;
+using BlogWebApplication.BusinessManagers;
+using BlogWebApplication.BusinessManagers.Interfaces;
+using BlogWebApplication.Service;
+using BlogWebApplication.Service.Interfaces;
 
 namespace BlogWebApplication.Configuration{
     public static class AppServices{
@@ -12,6 +16,11 @@ namespace BlogWebApplication.Configuration{
             serviceCollection.AddDefaultIdentity<ApplicationUser>(opt => opt.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDbContext>();
             serviceCollection.AddControllersWithViews().AddRazorRuntimeCompilation();
             serviceCollection.AddRazorPages();
+        }
+
+        public static void AddCustomServices(this IServiceCollection serviceCollection){
+            serviceCollection.AddScoped<IBlogBusinessManager, BlogBusinessManager>();
+            serviceCollection.AddScoped<IBlogService, BlogService>();
         }
     }
 }
