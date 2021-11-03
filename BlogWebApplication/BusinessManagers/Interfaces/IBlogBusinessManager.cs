@@ -7,6 +7,6 @@ namespace BlogWebApplication.BusinessManagers
 {
     public interface IBlogBusinessManager
     {
-        Task<Blog> CreateBlog(CreateBlogViewModel createBlogViewModel, ClaimsPrincipal claimsPrincipal);
+        Task<Blog> CreateBlog(CreateViewModel createBlogViewModel, ClaimsPrincipal claimsPrincipal);
     }
 }

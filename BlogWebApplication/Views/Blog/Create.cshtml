@@ -1,4 +1,4 @@
-﻿@model BlogWebApplication.Models.BlogViewModels.CreateBlogViewModel
+﻿@model BlogWebApplication.Models.BlogViewModels.CreateViewModel
 
 <div class="container-fluid">
     <h1 class="mt-4">Create</h1>
@@ -9,6 +9,14 @@
                 Write a Post
             </div>
             <div class="card-body">
+                <div class="form-group">
+                    <label asp-for="BlogHeaderImage"></label>
+                    <div class="custom-file">
+                        <input asp-for="BlogHeaderImage" class="custom-file-input" accept="image/*" />
+                        <label class="custom-file-label">Choose file</label>
+                    </div>
+                    <span asp-validation-for="BlogHeaderImage" class="text-danger"></span>
+                </div>
                 <form asp-controller="Blog" asp-action="Add" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label asp-for="Blog.Title"></label>
@@ -17,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="Blog.Content"></label>
-                        <textarea asp-for="Blog.Content" class="form-control testarea" rows="8"></textarea>
+                        <textarea asp-for="Blog.Content" class="form-control textarea" rows="8"></textarea>
                         <span asp-validation-for="Blog.Content" class="text-danger"></span>
                     </div>
                     <div class="card-footer">
@@ -26,7 +34,7 @@
                             <label>Publish now?</label>
                             <input type="checkbox" data-toggle="toggle" asp-form="Blog.Published">
                             </br>
-                            <button class="btn btn-primary" type="submit" >Submit</button>
+                            <button class="btn btn-primary" type="submit">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -38,9 +46,14 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
     <stript>
         ClassicEditor
-        .create(document.querySelector(".textarea"))
-        .catch(error => {
-            console.error(error);
-        })
+            .create(document.querySelector(".textarea"))
+            .catch(error => {
+                console.error(error);
+            });
+
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custome-file-label").addClass("selected").html(fileName);
+        });
     </stript>
 }

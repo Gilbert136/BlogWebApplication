@@ -8,6 +8,8 @@ using BlogWebApplication.BusinessManagers;
 using BlogWebApplication.Service;
 using BlogWebApplication.Service.Interfaces;
 using BlogWebApplication.BusinessManager;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace BlogWebApplication.Configuration{
     public static class AppServices{
@@ -16,6 +18,7 @@ namespace BlogWebApplication.Configuration{
             serviceCollection.AddDefaultIdentity<ApplicationUser>(opt => opt.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDbContext>();
             serviceCollection.AddControllersWithViews().AddRazorRuntimeCompilation();
             serviceCollection.AddRazorPages();
+            serviceCollection.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
         }
 
         public static void AddCustomServices(this IServiceCollection serviceCollection){
