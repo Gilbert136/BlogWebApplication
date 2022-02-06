@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BlogWebApplication.Models;
+using BlogWebApplication.BusinessManagers;
 
 namespace BlogWebApplication.Controllers
 {
@@ -13,14 +14,17 @@ namespace BlogWebApplication.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IPostBusinessManager _postBusinessManager;
+
+        public HomeController(ILogger<HomeController> logger, IPostBusinessManager postBusinessManager)
         {
             _logger = logger;
+            _postBusinessManager = postBusinessManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString, int? page)
         {
-            return View();
+            return View(_postBusinessManager.GetIndexViewModel(searchString, page));
         }
 
         public IActionResult Privacy()

@@ -24,9 +24,9 @@ namespace BlogWebApplication.Configuration{
         }
 
         public static void AddCustomServices(this IServiceCollection serviceCollection){
-            serviceCollection.AddScoped<IBlogBusinessManager, BlogBusinessManager>();
+            serviceCollection.AddScoped<IPostBusinessManager, PostBusinessManager>();
             serviceCollection.AddScoped<IAdminBusinessManager, AdminBusinessManager>();
-            serviceCollection.AddScoped<IBlogService, BlogService>();
+            serviceCollection.AddScoped<IPostService, PostService>();
         }
 
         public static void AddCustomerAuthorization(this IServiceCollection serviceCollection){

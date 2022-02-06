@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 using BlogWebApplication.Data.Models;
 using Microsoft.AspNetCore.Http;
 
-namespace BlogWebApplication.Models.BlogViewModels
+namespace BlogWebApplication.Models.PostViewModels
 {
     public class CreateViewModel
     {
         [Required, Display(Name = "Header Image")]
-        public IFormFile BlogHeaderImage { get; set; }
-        public Blog Blog { get; set; }
+        public IFormFile PostHeaderImage { get; set; }
+        public Post Post { get; set; }
     }
 }

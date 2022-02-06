@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BlogWebApplication.Data.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class initialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -156,7 +156,7 @@ namespace BlogWebApplication.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Blog",
+                name: "Post",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -165,21 +165,22 @@ namespace BlogWebApplication.Data.Migrations
                     Title = table.Column<string>(type: "text", nullable: true),
                     Content = table.Column<string>(type: "text", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    UpdatedOn = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     Published = table.Column<bool>(type: "boolean", nullable: false),
                     Approved = table.Column<bool>(type: "boolean", nullable: false),
                     ApproverId = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Blog", x => x.Id);
+                    table.PrimaryKey("PK_Post", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Blog_AspNetUsers_ApproverId",
+                        name: "FK_Post_AspNetUsers_ApproverId",
                         column: x => x.ApproverId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Blog_AspNetUsers_CreatorId",
+                        name: "FK_Post_AspNetUsers_CreatorId",
                         column: x => x.CreatorId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -187,12 +188,12 @@ namespace BlogWebApplication.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Post",
+                name: "Comment",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    BlogId = table.Column<int>(type: "integer", nullable: true),
+                    PostId = table.Column<int>(type: "integer", nullable: true),
                     PosterId = table.Column<string>(type: "text", nullable: true),
                     Content = table.Column<string>(type: "text", nullable: true),
                     ParentId = table.Column<int>(type: "integer", nullable: true),
@@ -200,22 +201,22 @@ namespace BlogWebApplication.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Post", x => x.Id);
+                    table.PrimaryKey("PK_Comment", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Post_AspNetUsers_PosterId",
+                        name: "FK_Comment_AspNetUsers_PosterId",
                         column: x => x.PosterId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Post_Blog_BlogId",
-                        column: x => x.BlogId,
-                        principalTable: "Blog",
+                        name: "FK_Comment_Comment_ParentId",
+                        column: x => x.ParentId,
+                        principalTable: "Comment",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Post_Post_ParentId",
-                        column: x => x.ParentId,
+                        name: "FK_Comment_Post_PostId",
+                        column: x => x.PostId,
                         principalTable: "Post",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -259,29 +260,29 @@ namespace BlogWebApplication.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Blog_ApproverId",
-                table: "Blog",
-                column: "ApproverId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Blog_CreatorId",
-                table: "Blog",
-                column: "CreatorId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Post_BlogId",
-                table: "Post",
-                column: "BlogId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Post_ParentId",
-                table: "Post",
+                name: "IX_Comment_ParentId",
+                table: "Comment",
                 column: "ParentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Post_PosterId",
-                table: "Post",
+                name: "IX_Comment_PosterId",
+                table: "Comment",
                 column: "PosterId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comment_PostId",
+                table: "Comment",
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_ApproverId",
+                table: "Post",
+                column: "ApproverId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_CreatorId",
+                table: "Post",
+                column: "CreatorId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -302,13 +303,13 @@ namespace BlogWebApplication.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Post");
+                name: "Comment");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Blog");
+                name: "Post");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

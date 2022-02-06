@@ -4,11 +4,12 @@ using BlogWebApplication.Data.Models;
 
 namespace BlogWebApplication.Service.Interfaces
 {
-    public interface IBlogService
+    public interface IPostService
     {
-        Task<Blog> Add(Blog blog);
-        IEnumerable<Blog> GetBlogs(ApplicationUser applicationUser);
-        Task<Blog> GetBlog(int blogId);
-        Task<Blog> Update(Blog blog);
+        Task<Post> Add(Post Post);
+        IEnumerable<Post> GetPosts(ApplicationUser applicationUser);
+        IEnumerable<Post> GetPosts(string searchString);
+        Task<Post> GetPost(int PostId);
+        Task<Post> Update(Post Post);
     }
 }

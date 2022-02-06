@@ -8,36 +8,44 @@ using System.Linq;
 
 namespace BlogWebApplication.Service
 {
-    public class BlogService : IBlogService
+    public class PostService : IPostService
     {
         private readonly ApplicationDbContext _applicationDbContext;
 
-        public BlogService(ApplicationDbContext applicationDbContext){
+        public PostService(ApplicationDbContext applicationDbContext){
             _applicationDbContext = applicationDbContext;
         }
 
-        public async Task<Blog> Add(Blog blog){
-            _applicationDbContext.Add(blog);
+        public async Task<Post> Add(Post Post){
+            _applicationDbContext.Add(Post);
             await _applicationDbContext.SaveChangesAsync();
-            return blog;
+            return Post;
         }
 
-        public IEnumerable<Blog> GetBlogs(ApplicationUser applicationUser){
-            return _applicationDbContext.Blog
-            .Include(blog => blog.Creator)
-            .Include(blog => blog.Approver)
-            .Include(blog => blog.Posts)
-            .Where(blog => blog.Creator == applicationUser);
+        public IEnumerable<Post> GetPosts(ApplicationUser applicationUser){
+            return _applicationDbContext.Post
+            .Include(x => x.Creator)
+            .Include(x => x.Approver)
+            .Include(x => x.Comment)
+            .Where(x => x.Creator == applicationUser);
         }
 
-        public async Task<Blog> GetBlog(int blogId){
-            return await _applicationDbContext.Blog.FirstOrDefaultAsync(blog => blog.Id == blogId);
+        public IEnumerable<Post> GetPosts(string searchString){
+            return _applicationDbContext.Post
+            .OrderByDescending(x => x.UpdatedOn)
+            .Include(x => x.Creator)
+            .Include(x => x.Comment)
+            .Where(x => x.Title.Contains(searchString) || x.Content.Contains(searchString));
         }
 
-        public async Task<Blog> Update(Blog blog){
-            _applicationDbContext.Update(blog);
+        public async Task<Post> GetPost(int PostId){
+            return await _applicationDbContext.Post.FirstOrDefaultAsync(Post => Post.Id == PostId);
+        }
+
+        public async Task<Post> Update(Post Post){
+            _applicationDbContext.Update(Post);
             await _applicationDbContext.SaveChangesAsync();
-            return blog;
+            return Post;
         }
     }
 }

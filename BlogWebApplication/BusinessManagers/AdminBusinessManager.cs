@@ -9,16 +9,16 @@ using BlogWebApplication.Service.Interfaces;
 namespace BlogWebApplication.BusinessManagers {
     public class AdminBusinessManager : IAdminBusinessManager{
         private UserManager<ApplicationUser>  _userManager;
-        private IBlogService _blogService;
+        private IPostService _postService;
 
-        public AdminBusinessManager(UserManager<ApplicationUser> userManager, IBlogService blogService){
+        public AdminBusinessManager(UserManager<ApplicationUser> userManager, IPostService postService){
             _userManager = userManager;
-            _blogService = blogService;
+            _postService = postService;
         }
         public async Task<IndexViewModel> GetAdminDashboard(ClaimsPrincipal claimPrincipal){
             var applicationUser = await _userManager.GetUserAsync(claimPrincipal);
             return new IndexViewModel {
-                Blog = _blogService.GetBlogs(applicationUser)
+                Post = _postService.GetPosts(applicationUser)
             };
         }
     }

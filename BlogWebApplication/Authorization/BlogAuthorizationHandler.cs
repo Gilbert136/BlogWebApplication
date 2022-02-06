@@ -5,12 +5,12 @@ using BlogWebApplication.Data.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace BlogWebApplication.Authorization{
-    public class BlogAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, Blog>{
+    public class BlogAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, Post>{
         private readonly UserManager<ApplicationUser> _userManager;
         public BlogAuthorizationHandler(UserManager<ApplicationUser> userManager){
             _userManager = userManager;
         }
-        protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, OperationAuthorizationRequirement requirement, Blog resource)
+        protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, OperationAuthorizationRequirement requirement, Post resource)
         {
             var applicationUser = await _userManager.GetUserAsync(context.User);
 

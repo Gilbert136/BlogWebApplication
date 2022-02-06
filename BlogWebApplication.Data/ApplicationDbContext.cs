@@ -10,7 +10,7 @@ namespace BlogWebApplication.Data
             : base(options){
         }
 
-        public DbSet<Blog> Blog { get; set; }
+        public DbSet<Comment> Comment { get; set; }
         public DbSet<Post> Post { get; set; }
     }
 }
