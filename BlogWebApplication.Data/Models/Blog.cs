@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlogWebApplication.Data.Models
 {
+    [Table("Blog")]
     public class Blog {
         public int Id { get; set; }
         public ApplicationUser Creator { get; set; }
@@ -11,8 +13,8 @@ namespace BlogWebApplication.Data.Models
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime CreatedOn { get; set; }
+        public DateTime UpdatedOn { get; set; }
         public bool Published { get; set;}
-
         public bool Approved { get; set;}
         public ApplicationUser Approver { get; set; }
 

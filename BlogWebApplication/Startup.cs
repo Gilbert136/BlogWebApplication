@@ -32,6 +32,7 @@ namespace BlogWebApplication
         {
             services.AddDefaultService(Configuration);
             services.AddCustomServices();
+            services.AddCustomerAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

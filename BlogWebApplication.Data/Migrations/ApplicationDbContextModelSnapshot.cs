@@ -117,6 +117,9 @@ namespace BlogWebApplication.Data.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("UpdatedOn")
+                        .HasColumnType("timestamp without time zone");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ApproverId");

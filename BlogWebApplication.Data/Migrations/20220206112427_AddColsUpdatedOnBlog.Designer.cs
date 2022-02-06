@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BlogWebApplication.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211029005409_ExtendIdentityUser")]
-    partial class ExtendIdentityUser
+    [Migration("20220206112427_AddColsUpdatedOnBlog")]
+    partial class AddColsUpdatedOnBlog
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -89,6 +89,79 @@ namespace BlogWebApplication.Data.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("BlogWebApplication.Data.Models.Blog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<bool>("Approved")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("ApproverId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("CreatorId")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Published")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedOn")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApproverId");
+
+                    b.HasIndex("CreatorId");
+
+                    b.ToTable("Blog");
+                });
+
+            modelBuilder.Entity("BlogWebApplication.Data.Models.Post", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int?>("BlogId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("PosterId")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId");
+
+                    b.HasIndex("ParentId");
+
+                    b.HasIndex("PosterId");
+
+                    b.ToTable("Post");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -225,6 +298,42 @@ namespace BlogWebApplication.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("BlogWebApplication.Data.Models.Blog", b =>
+                {
+                    b.HasOne("BlogWebApplication.Data.Models.ApplicationUser", "Approver")
+                        .WithMany()
+                        .HasForeignKey("ApproverId");
+
+                    b.HasOne("BlogWebApplication.Data.Models.ApplicationUser", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatorId");
+
+                    b.Navigation("Approver");
+
+                    b.Navigation("Creator");
+                });
+
+            modelBuilder.Entity("BlogWebApplication.Data.Models.Post", b =>
+                {
+                    b.HasOne("BlogWebApplication.Data.Models.Blog", "Blog")
+                        .WithMany("Posts")
+                        .HasForeignKey("BlogId");
+
+                    b.HasOne("BlogWebApplication.Data.Models.Post", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentId");
+
+                    b.HasOne("BlogWebApplication.Data.Models.ApplicationUser", "Poster")
+                        .WithMany()
+                        .HasForeignKey("PosterId");
+
+                    b.Navigation("Blog");
+
+                    b.Navigation("Parent");
+
+                    b.Navigation("Poster");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -274,6 +383,11 @@ namespace BlogWebApplication.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BlogWebApplication.Data.Models.Blog", b =>
+                {
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

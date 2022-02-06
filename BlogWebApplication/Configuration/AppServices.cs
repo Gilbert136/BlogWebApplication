@@ -7,9 +7,11 @@ using BlogWebApplication.Data.Models;
 using BlogWebApplication.BusinessManagers;
 using BlogWebApplication.Service;
 using BlogWebApplication.Service.Interfaces;
-using BlogWebApplication.BusinessManager;
+using BlogWebApplication.BusinessManagers.Interfaces;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using BlogWebApplication.Authorization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BlogWebApplication.Configuration{
     public static class AppServices{
@@ -23,7 +25,12 @@ namespace BlogWebApplication.Configuration{
 
         public static void AddCustomServices(this IServiceCollection serviceCollection){
             serviceCollection.AddScoped<IBlogBusinessManager, BlogBusinessManager>();
+            serviceCollection.AddScoped<IAdminBusinessManager, AdminBusinessManager>();
             serviceCollection.AddScoped<IBlogService, BlogService>();
+        }
+
+        public static void AddCustomerAuthorization(this IServiceCollection serviceCollection){
+            serviceCollection.AddTransient<IAuthorizationHandler, BlogAuthorizationHandler>();
         }
     }
 }
