@@ -37,16 +37,34 @@ namespace BlogWebApplication.BusinessManagers
         public IndexViewModel GetIndexViewModel(string searchString, int? page){
             int pageSize = 20;
             int pageNumber = page ?? 1;
-            var blogs = _postService.GetPosts(searchString ?? string.Empty)
-            .Where(blog => blog.Published);
+            var posts = _postService.GetPosts(searchString ?? string.Empty).Where(blog => blog.Published);
 
             return new IndexViewModel {
-                Post = new StaticPagedList<Post>(blogs.Skip((pageNumber - 1) * pageSize).Take(pageSize), pageNumber, pageSize, blogs.Count()),
+                Post = new StaticPagedList<Post>(posts.Skip((pageNumber - 1) * pageSize).Take(pageSize), pageNumber, pageSize, posts.Count()),
                 SearchString = searchString,
                 PageNumber = pageNumber
             };
         }
-        
+
+        public async Task<ActionResult<PostViewModel>> GetPostViewModel(int? id, ClaimsPrincipal claimsPrincipal)
+        {
+            if(id is null) return new BadRequestResult();
+
+            var postId = id.Value;
+            var post = await _postService.GetPost(postId);
+
+            if (post is null) return new NotFoundResult();
+
+            if (!post.Published)
+            {
+                var authorizationResult = await _authorizationService.AuthorizeAsync(claimsPrincipal, post, Operations.Read);
+
+                if (!authorizationResult.Succeeded) return DetermineActionResult(claimsPrincipal);
+            }
+
+            return new PostViewModel { Post = post };
+        }
+
         public async Task<Post> CreatePost(CreateViewModel createViewModel, ClaimsPrincipal claimsPrincipal){
             Post post = createViewModel.Post;
             

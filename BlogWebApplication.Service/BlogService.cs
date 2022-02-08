@@ -39,7 +39,11 @@ namespace BlogWebApplication.Service
         }
 
         public async Task<Post> GetPost(int PostId){
-            return await _applicationDbContext.Post.FirstOrDefaultAsync(Post => Post.Id == PostId);
+            return await _applicationDbContext.Post
+            .Include(x => x.Creator)
+            .Include(x => x.Comment).ThenInclude(x => x.Author)
+            .Include(x => x.Comment).ThenInclude(x => x.Comments)
+            .FirstOrDefaultAsync(Post => Post.Id == PostId);
         }
 
         public async Task<Post> Update(Post Post){
