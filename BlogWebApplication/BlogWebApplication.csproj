@@ -1,6 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <Content Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BlogWebApplication.Data\BlogWebApplication.Data.csproj" />
     <ProjectReference Include="..\BlogWebApplication.Service\BlogWebApplication.Service.csproj" />
   </ItemGroup>

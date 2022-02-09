@@ -101,7 +101,7 @@ namespace BlogWebApplication.BusinessManagers
 
             if(editViewModel.PostHeaderImage != null){
                 string webRootPath = _webHostEnviroment.WebRootPath;
-                string pathToImage = $@"{webRootPath}/UserFile/Blogs/{post.Id}/HeaderImage.jpg";
+                string pathToImage = $@"{webRootPath}/UserFile/Posts/{post.Id}/HeaderImage.jpg";
 
                 EnsureFolder(pathToImage);
 

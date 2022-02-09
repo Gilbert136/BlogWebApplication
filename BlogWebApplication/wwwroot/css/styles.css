@@ -11128,7 +11128,7 @@ header.masthead {
   background-attachment: scroll;
 }
 header.masthead:before {
-  content: "";
+  /*content: "";*/
   position: absolute;
   top: 0;
   left: 0;

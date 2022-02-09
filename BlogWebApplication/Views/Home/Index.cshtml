@@ -14,11 +14,11 @@
         @foreach (var post in Model.Post){
             <div class="col-lg-4 col-md-3 mb-4">
                 <div class="card border-0 shadow">
-                    <img src="~/UserFiles/Blogs/@post.Id/HeaderImage.jpg" class="card-img-top">
+                    <img src="~/UserFiles/Posts/@post.Id/HeaderImage.jpg" class="card-img-top">
                     <div class="card-body">
                         <div class="row text-center" style="margin: 0px auto 10px 0px;">
                             <h5 class="card-title text-center w-100">
-                                <a asp-controller="Blog" asp-action="Index" asp-route-id="@post.Id">@post.Title</a>
+                                <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">@post.Title</a>
                             </h5>
                         </div>
                     </div>
@@ -26,7 +26,9 @@
             </div>
         }
     </div>
-    <pager class="pager-container" list="@Model.Post" options="@PagedListRenderOptions.Bootstrap4PageNumbersPlusPrevAndNext" asp-action="Index" asp-controller="Home" asp-route-query="@Model.SearchString" />
+    <div list="@Model.Post" count="20">
+        <pager class="pager-container" list="@Model.Post" options="@PagedListRenderOptions.Bootstrap4PageNumbersPlusPrevAndNext" asp-action="Index" asp-controller="Home" asp-route-query="@Model.SearchString" />
+    </div>
 </div>
 
 <!-- Main Content-->
