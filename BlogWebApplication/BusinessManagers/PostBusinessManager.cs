@@ -84,6 +84,27 @@ namespace BlogWebApplication.BusinessManagers
             return post;
         }
 
+        public async Task<ActionResult<Comment>> CreateComment(PostViewModel postViewModel, ClaimsPrincipal claimsPrincipal)
+        {
+            if (postViewModel.Post is null || postViewModel.Post.Id == 0) return new BadRequestResult();
+
+            var post = await _postService.GetPost(postViewModel.Post.Id);
+
+            if (post is null) return new NotFoundResult();
+
+            var comment = postViewModel.Comment;
+
+            comment.Author = await _userManager.GetUserAsync(claimsPrincipal);
+            comment.Post = post;
+            comment.CreatedOn = DateTime.Now;
+            
+            if(comment.Parent != null){
+                comment.Parent = _postService.GetComment(comment.Parent.Id);
+            }
+
+            return await _postService.Add(comment);
+        }
+
         public async Task<ActionResult<EditViewModel>> UpdatePost(EditViewModel editViewModel, ClaimsPrincipal claimsPrincipal){
             var post = await _postService.GetPost(editViewModel.Post.Id);
 

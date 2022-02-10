@@ -42,7 +42,7 @@ namespace BlogWebApplication.Service
             return await _applicationDbContext.Post
             .Include(x => x.Creator)
             .Include(x => x.Comment).ThenInclude(x => x.Author)
-            .Include(x => x.Comment).ThenInclude(x => x.Comments)
+            .Include(x => x.Comment).ThenInclude(x => x.Comments).ThenInclude(x => x.Parent)
             .FirstOrDefaultAsync(Post => Post.Id == PostId);
         }
 
@@ -50,6 +50,13 @@ namespace BlogWebApplication.Service
             _applicationDbContext.Update(Post);
             await _applicationDbContext.SaveChangesAsync();
             return Post;
+        }
+
+        public async Task<Comment> Add(Comment comment)
+        {
+            _applicationDbContext.Add(comment);
+            await _applicationDbContext.SaveChangesAsync();
+            return comment;
         }
     }
 }
