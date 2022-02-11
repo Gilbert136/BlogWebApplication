@@ -15,6 +15,20 @@ namespace BlogWebApplication.Controllers
             _postBusinessManager = postBusinessManager;
         }
 
+
+        [HttpPost("Post/Comment")]
+        public async Task<IActionResult> Comment(PostViewModel postViewModel)
+        {
+            var actionResult = await _postBusinessManager.CreateComment(postViewModel, User);
+
+            if (actionResult.Result is null)
+            {
+                return RedirectToAction("Index", new { postViewModel.Post.Id });
+            }
+
+            return actionResult.Result;
+        }
+
         [Route("Post/{id}"), AllowAnonymous]
         public async Task<IActionResult> Index(int? id)
         {
@@ -49,6 +63,7 @@ namespace BlogWebApplication.Controllers
         }
 
         [HttpPost]
+
         public async Task<IActionResult> Update(EditViewModel editViewModel){
             var actionResult =  await _postBusinessManager.UpdatePost(editViewModel, User);
 
@@ -59,17 +74,5 @@ namespace BlogWebApplication.Controllers
             return actionResult.Result;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Comment(PostViewModel postViewModel)
-        {
-            var actionResult = await _postBusinessManager.CreateComment(postViewModel, User);
-
-            if (actionResult.Result is null)
-            {
-                return RedirectToAction("Index", new { postViewModel.Post.Id });
-            }
-
-            return actionResult.Result;
-        }
     }
 }

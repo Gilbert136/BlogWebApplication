@@ -58,5 +58,14 @@ namespace BlogWebApplication.Service
             await _applicationDbContext.SaveChangesAsync();
             return comment;
         }
+
+        public Comment GetComment(int commentId)
+        {
+            return _applicationDbContext.Comment
+                .Include(x => x.Author)
+                .Include(x => x.Post)
+                .Include(x => x.Parent)
+                .FirstOrDefault(x => x.Id == commentId);
+        }
     }
 }

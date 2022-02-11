@@ -12,5 +12,6 @@ namespace BlogWebApplication.Service.Interfaces
         Task<Post> GetPost(int PostId);
         Task<Post> Update(Post Post);
         Task<Comment> Add(Comment comment);
+        Comment GetComment(int commentId);
     }
 }

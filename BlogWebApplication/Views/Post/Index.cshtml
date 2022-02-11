@@ -35,7 +35,7 @@
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <div class="collapse" id="@($"replyComment{comment.Id}")">
-                                    <form asp-controller="Post" asp-action="Comment">
+                                    <form asp-controller="Post" asp-action="Comment" method="post">
                                         <input asp-for="Post.Id" readonly hidden />
                                         <input asp-for="Comment.Parent.Id" value="@comment.Id" readonly hidden />
                                         <div class="form-group">
@@ -63,7 +63,7 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <div>
-                        <form asp-controller="Post" as-action="Comment">
+                        <form asp-controller="Post" asp-action="Comment">
                             <input asp-for="Post.Id" readonly hidden />
                             <div class="form-group">
                                 <label for="comment">Comment</label>
@@ -79,7 +79,8 @@
         </div>
     </div>
 </article>
-@section Script{
+
+@section scripts{
     <script>
         $('[data-toggle="collapse"]').on('click', function () {
             var $this = $(this),
