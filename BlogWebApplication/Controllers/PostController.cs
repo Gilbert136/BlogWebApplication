@@ -42,16 +42,18 @@ namespace BlogWebApplication.Controllers
             return actionResult.Result;
         }
 
+        [HttpGet("Post/Create")]
         public IActionResult Create(){
             return View(new CreateViewModel());
         }
 
-        [HttpPost]
+        [HttpPost("Post/Add")]
         public async Task<IActionResult> Add(CreateViewModel createPostViewModel){
             await _postBusinessManager.CreatePost(createPostViewModel, User);
             return RedirectToAction("Create");
         }
 
+        [HttpPost("Post/Edit")]
         public async Task<IActionResult> Edit(int? id){
             var actionResult =  await _postBusinessManager.GetEditViewModel(id, User);
 
