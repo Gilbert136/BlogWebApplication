@@ -17,7 +17,7 @@ namespace BlogWebApplication.Configuration{
     public static class AppServices{
         public static void AddDefaultService(this IServiceCollection serviceCollection, IConfiguration configuration){
             // serviceCollection.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("DefaultConnectionPostgreSql")) ); 
-            serviceCollection.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("AzureConnectionPostgreSql")) );
+            serviceCollection.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("PostgreSqlConnectionString")) );
             serviceCollection.AddDefaultIdentity<ApplicationUser>(opt => opt.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDbContext>();
             serviceCollection.AddControllersWithViews().AddRazorRuntimeCompilation();
             serviceCollection.AddRazorPages();
