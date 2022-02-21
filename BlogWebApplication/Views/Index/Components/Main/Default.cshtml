@@ -1,0 +1,28 @@
+@using BlogWebApplication.ViewComponents.Index
+
+<main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    @await Component.InvokeAsync(typeof(FeaturedServicesViewComponent));
+
+    <!-- ======= About Section ======= -->
+    @await Component.InvokeAsync(typeof(AboutViewComponent));
+
+    <!-- ======= Contribution Section ======= -->
+    @await Component.InvokeAsync(typeof(ContributionViewComponent));
+
+    <!-- ======= Services Section ======= -->
+    @await Component.InvokeAsync(typeof(ServicesViewComponent));
+
+    <!-- ======= F.A.Q Section ======= -->
+    @await Component.InvokeAsync(typeof(FaqViewComponent));
+
+    <!-- ======= Team Section ======= -->
+    @await Component.InvokeAsync(typeof(TeamViewComponent));
+
+    <!-- ======= Recent Blog Posts Section ======= -->
+    @await Component.InvokeAsync(typeof(RecentBlogViewComponent));
+
+    <!-- ======= Contact Section ======= -->
+    @await Component.InvokeAsync(typeof(ContactViewComponent));
+</main><!-- End #main -->
