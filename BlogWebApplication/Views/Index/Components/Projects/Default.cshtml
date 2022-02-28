@@ -1,0 +1,25 @@
+@model BlogWebApplication.Models.IndexViewModels.IndexViewModel
+
+<section id="recent-blog-posts" class="recent-blog-posts">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Project</h2>
+      <p>Recent posts form our Project</p>
+    </div>
+    <div class="row">
+      @foreach(var project in Model.Projects){
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="post-box">
+            <div class="post-img"><img src="~/UserFiles/Projects/@project.Id/HeaderImage.jpg" class="img-fluid" alt=""></div>
+            <div class="meta">
+              <span class="post-date">@project?.CreatedOn.ToString("ddd, MMMM d")</span>
+              <span class="post-author"> / @project?.Creator?.FirstName @project?.Creator?.LastName</span>
+            </div>
+            <h3 class="post-title">@project?.Title</h3>
+            <a asp-controller="Project" asp-action="Index" asp-route-id="@project.Id" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section><!-- End Recent Blog Posts Section -->

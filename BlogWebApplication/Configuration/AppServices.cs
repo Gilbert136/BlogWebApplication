@@ -30,6 +30,11 @@ namespace BlogWebApplication.Configuration{
             serviceCollection.AddScoped<IHomeBusinessManager, HomeBusinessManager>();
             serviceCollection.AddScoped<IPostService, PostService>();
             serviceCollection.AddScoped<IUserService, UserService>();
+
+            serviceCollection.AddScoped<IProjectBusinessManager, ProjectBusinessManager>();
+            serviceCollection.AddScoped<IProjectService, ProjectService>();
+            serviceCollection.AddScoped<IIndexBusinessManager, IndexBusinessManager>();
+            serviceCollection.AddScoped<IIndexService, IndexService>();
         }
 
         public static void AddCustomerAuthorization(this IServiceCollection serviceCollection){

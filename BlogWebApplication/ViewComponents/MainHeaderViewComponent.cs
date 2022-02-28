@@ -3,9 +3,10 @@ using System.Threading.Tasks;
 
 namespace BlogWebApplication.ViewComponents
 {
-    public class HeaderViewComponent : ViewComponent
+    public class MainHeaderViewComponent : ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync(){
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
             return await Task.Factory.StartNew(() => { return View(); });
         }
     }

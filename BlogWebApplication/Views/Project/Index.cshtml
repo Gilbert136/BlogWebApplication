@@ -1,0 +1,9 @@
+@{ 
+    Layout = "_Layout";
+}
+@using BlogWebApplication.ViewComponents.Project
+
+@model BlogWebApplication.Models.ProjectViewModels.ProjectViewModel
+
+<!-- ======= Main ======= -->
+@await Component.InvokeAsync(typeof(MainViewComponent));

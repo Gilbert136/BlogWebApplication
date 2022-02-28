@@ -1,12 +1,14 @@
+@using BlogWebApplication.ViewComponents
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>HeroBiz Bootstrap Template - Home 1</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Tech For The Community</title>
+  <meta name="description" content="TechForTheCommunity is a non-profit technology organisation based in Ghana, West Africa. We believe the age of digital transformation is now and it is important that we embrace this change. We are looking for people with such motivation to join the team. Come onboard and let transform the world together." >
+  <meta name="keywords" content="" >
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -44,5 +46,30 @@
   ======================================================== -->
 </head>
 
- @RenderBody()
+<body>
+    <!-- ======= Header ======= -->
+    @await Component.InvokeAsync(typeof(MainHeaderViewComponent));
+
+    <!-- ======= Main ======= -->
+    @RenderBody()
+
+    <!-- ======= Footer ======= -->
+    @await Component.InvokeAsync(typeof(MainFooterViewComponent));
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="~/materials/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="~/materials/assets/vendor/aos/aos.js"></script>
+  <script src="~/materials/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="~/materials/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="~/materials/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="~/materials/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="~/materials/assets/js/main.js"></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
 </html>

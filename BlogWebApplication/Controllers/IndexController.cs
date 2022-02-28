@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using BlogWebApplication.Models;
 using BlogWebApplication.BusinessManagers;
 using BlogWebApplication.BusinessManagers.Interfaces;
+using BlogWebApplication.Models.IndexViewModels;
+using BlogWebApplication.Data.Models;
 
 namespace BlogWebApplication.Controllers
 {
@@ -15,14 +17,19 @@ namespace BlogWebApplication.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public IndexController(ILogger<HomeController> logger)
+        private readonly IIndexBusinessManager _indexBusinessManager;
+
+        public IndexController(IIndexBusinessManager indexBusinessManager, ILogger<HomeController> logger)
         {
             _logger = logger;
+            _indexBusinessManager = indexBusinessManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var actionResult = await _indexBusinessManager.GetRecentProjectViewModel(User);
+            if (actionResult.Result is null) return View(actionResult.Value);
+            return actionResult.Result;
         }
     }
 }

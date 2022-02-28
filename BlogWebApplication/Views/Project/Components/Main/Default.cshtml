@@ -1,0 +1,10 @@
+@using BlogWebApplication.ViewComponents.Project
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    @await Component.InvokeAsync(typeof(BreadcrumbViewComponent));
+
+    <!-- ======= Blog Details Section ======= -->
+    @await Component.InvokeAsync(typeof(ProjectDetailViewComponent));
+
+  </main><!-- End #main -->

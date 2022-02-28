@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlogWebApplication.ViewComponents.Index
+namespace BlogWebApplication.ViewComponents.Project
 {
-    public class FooterViewComponent : ViewComponent
+    public class ProjectDetailViewComponent : ViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {
