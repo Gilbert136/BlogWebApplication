@@ -31,5 +31,17 @@ namespace BlogWebApplication.Controllers
             if (actionResult.Result is null) return View(actionResult.Value);
             return actionResult.Result;
         }
+
+        [HttpPost("Index/Contact")]
+        public async Task<IActionResult> Comment(IndexViewModel indexViewModel)
+        {
+            var actionResult = await _indexBusinessManager.CreateContact(indexViewModel, User);
+
+            if (actionResult.Result is null)
+            {
+                return RedirectToAction("Index");
+            }
+            return actionResult.Result;
+        }
     }
 }

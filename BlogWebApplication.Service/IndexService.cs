@@ -24,5 +24,11 @@ namespace BlogWebApplication.Service
             .Include(x => x.Comments)
             .Where(x => x.Published == true).ToListAsync();
         }
+
+        public async Task<Contact> Add(Contact contact){
+            _applicationDbContext.Add(contact);
+            await _applicationDbContext.SaveChangesAsync();
+            return contact;
+        }
     }
 }

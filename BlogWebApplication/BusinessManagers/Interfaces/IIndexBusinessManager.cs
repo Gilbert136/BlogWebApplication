@@ -10,5 +10,6 @@ namespace BlogWebApplication.BusinessManagers
     public interface IIndexBusinessManager
     {
         Task<ActionResult<IndexViewModel>> GetRecentProjectViewModel(ClaimsPrincipal claimsPrincipal);
+        Task<ActionResult<Contact>> CreateContact(IndexViewModel indexViewModel, ClaimsPrincipal claimsPrincipal);
     }
 }

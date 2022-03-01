@@ -40,5 +40,15 @@ namespace BlogWebApplication.BusinessManagers
 
             return new IndexViewModel { Projects = result.ToList() };
         }
+
+        public async Task<ActionResult<Contact>> CreateContact(IndexViewModel indexViewModel, ClaimsPrincipal claimsPrincipal)
+        {
+            if (indexViewModel.Contact is null) return new BadRequestResult();
+
+            var result = indexViewModel.Contact;
+
+            result.CreatedOn = DateTime.Now;
+            return await _indexService.Add(result);
+        }
     }
 }
