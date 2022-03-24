@@ -14,7 +14,8 @@
 
       let thisForm = this;
 
-      let action = thisForm.getAttribute('action');
+      //let action = thisForm.getAttribute('action');
+      let action = "/api/contact/";
       let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
       
       if( ! action ) {
@@ -25,15 +26,18 @@
       thisForm.querySelector('.error-message').classList.remove('d-block');
       thisForm.querySelector('.sent-message').classList.remove('d-block');
 
-      let formData = new FormData( thisForm );
+        let formData = new FormData(thisForm);
 
+        
       if ( recaptcha ) {
         if(typeof grecaptcha !== "undefined" ) {
           grecaptcha.ready(function() {
             try {
               grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
               .then(token => {
-                formData.set('recaptcha-response', token);
+                  formData.set('recaptcha-response', token);
+
+
                 php_email_form_submit(thisForm, action, formData);
               })
             } catch(error) {
@@ -44,17 +48,31 @@
           displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
         }
       } else {
-        php_email_form_submit(thisForm, action, formData);
+          var object = {};
+          formData.forEach((value, key) => {
+              // Reflect.has in favor of: object.hasOwnProperty(key)
+              if (!Reflect.has(object, key)) {
+                  object[key] = value;
+                  return;
+              }
+              if (!Array.isArray(object[key])) {
+                  object[key] = [object[key]];
+              }
+              object[key].push(value);
+          });
+          var json = JSON.stringify(object);
+
+          php_email_form_submit(thisForm, action, json);
       }
     });
   });
 
   function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
-      method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
-    })
+      fetch(action, {
+          method: 'POST',
+          body: formData,
+          headers: {'Content-type': 'application/json; charset=UTF-8'}
+       })
     .then(response => {
       if( response.ok ) {
         return response.text()

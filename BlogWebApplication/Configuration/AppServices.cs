@@ -12,13 +12,20 @@ using Microsoft.Extensions.FileProviders;
 using System.IO;
 using BlogWebApplication.Authorization;
 using Microsoft.AspNetCore.Authorization;
+using BlogWebApplication.Data.Sqlite;
+using System;
 
 namespace BlogWebApplication.Configuration{
     public static class AppServices{
         public static void AddDefaultService(this IServiceCollection serviceCollection, IConfiguration configuration){
-            // serviceCollection.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("DefaultConnectionPostgreSql")) ); 
-            serviceCollection.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("PostgreSqlConnectionString")) );
-            serviceCollection.AddDefaultIdentity<ApplicationUser>(opt => opt.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDbContext>();
+            serviceCollection.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("PostgreSqlConnectionString")));
+            serviceCollection.AddDbContext<LocalSqliteDbContext>(opt => opt.UseSqlite(configuration.GetConnectionString("LocalSqliteConnectionString")));
+
+            //var folder = Environment.SpecialFolder.LocalApplicationData;
+            //var path = Environment.GetFolderPath(folder);
+            //serviceCollection.AddDbContext<LocalSqliteDbContext>(opt => opt.UseSqlite($"Data Source={System.IO.Path.Join(path, "blogging.db")}"));
+
+            serviceCollection.AddDefaultIdentity<ApplicationUser>(opt => opt.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<LocalSqliteDbContext>();
             serviceCollection.AddControllersWithViews().AddRazorRuntimeCompilation();
             serviceCollection.AddRazorPages();
             serviceCollection.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));

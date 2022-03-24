@@ -27,9 +27,11 @@ namespace BlogWebApplication.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var actionResult = await _indexBusinessManager.GetRecentProjectViewModel(User);
-            if (actionResult.Result is null) return View(actionResult.Value);
-            return actionResult.Result;
+            var result = await _indexBusinessManager.GetIndexViewModel(User);
+
+            if (result.Result is null) return View(result.Value);
+
+            return result.Result;
         }
 
         [HttpPost("Index/Contact")]

@@ -7,6 +7,7 @@ namespace BlogWebApplication.Service.Interfaces
     public interface IIndexService
     {
         Task<IEnumerable<Project>> GetRecentProject();
-        Task<Contact> Add(Contact contact);
+        Task<IEnumerable<Faq>> GetFrequentlyAskedQuestion();
+        Task<Contact> AddContact(Contact contact);
     }
 }

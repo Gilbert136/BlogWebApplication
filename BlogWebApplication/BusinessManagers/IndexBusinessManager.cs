@@ -13,7 +13,7 @@ using BlogWebApplication.Authorization;
 using BlogWebApplication.Models.IndexViewModels;
 using PagedList.Core;
 using System.Linq;
-
+using System.Collections.Generic;
 
 namespace BlogWebApplication.BusinessManagers
 {
@@ -41,6 +41,31 @@ namespace BlogWebApplication.BusinessManagers
             return new IndexViewModel { Projects = result.ToList() };
         }
 
+        public async Task<ActionResult<IndexViewModel>> GetFrequentlyAskedQuestionViewModel(ClaimsPrincipal claimsPrincipal)
+        {
+            var result = await _indexService.GetFrequentlyAskedQuestion();
+
+            if (result is null) return new NotFoundResult();
+
+            return new IndexViewModel { Faqs = result.ToList() };
+        }
+
+        public async Task<ActionResult<IndexViewModel>> GetIndexViewModel(ClaimsPrincipal claimsPrincipal)
+        {
+            var projectResult = await _indexService.GetRecentProject();
+
+            if (projectResult is null) return new NotFoundResult();
+
+            var faqResult = await _indexService.GetFrequentlyAskedQuestion();
+
+            if (faqResult is null) return new NotFoundResult();
+
+            return new IndexViewModel { 
+                Faqs = faqResult.ToList(),
+                Projects = projectResult.ToList()
+            };
+        }
+
         public async Task<ActionResult<Contact>> CreateContact(IndexViewModel indexViewModel, ClaimsPrincipal claimsPrincipal)
         {
             if (indexViewModel.Contact is null) return new BadRequestResult();
@@ -48,7 +73,7 @@ namespace BlogWebApplication.BusinessManagers
             var result = indexViewModel.Contact;
 
             result.CreatedOn = DateTime.Now;
-            return await _indexService.Add(result);
+            return await _indexService.AddContact(result);
         }
     }
 }

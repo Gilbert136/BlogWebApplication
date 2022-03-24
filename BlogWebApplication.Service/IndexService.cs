@@ -5,15 +5,20 @@ using BlogWebApplication.Data;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using BlogWebApplication.Data.Sqlite;
 
 namespace BlogWebApplication.Service
 {
     public class IndexService : IIndexService
     {
+        private readonly LocalSqliteDbContext _localSqliteDbContext;
         private readonly ApplicationDbContext _applicationDbContext;
 
-        public IndexService(ApplicationDbContext applicationDbContext){
+
+        public IndexService(ApplicationDbContext applicationDbContext, LocalSqliteDbContext localSqliteDbContext)
+        {
             _applicationDbContext = applicationDbContext;
+            _localSqliteDbContext = localSqliteDbContext;
         }
 
         public async Task<IEnumerable<Project>> GetRecentProject()
@@ -25,7 +30,12 @@ namespace BlogWebApplication.Service
             .Where(x => x.Published == true).ToListAsync();
         }
 
-        public async Task<Contact> Add(Contact contact){
+        public async Task<IEnumerable<Faq>> GetFrequentlyAskedQuestion()
+        {
+            return await _localSqliteDbContext.Faq.ToListAsync();
+        }
+
+        public async Task<Contact> AddContact(Contact contact){
             _applicationDbContext.Add(contact);
             await _applicationDbContext.SaveChangesAsync();
             return contact;

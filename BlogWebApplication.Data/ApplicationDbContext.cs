@@ -13,8 +13,9 @@ namespace BlogWebApplication.Data
         public DbSet<Comment> Comment { get; set; }
         public DbSet<Post> Post { get; set; }
         public DbSet<Project> Project { get; set; }
-
         public DbSet<Contact> Contact { get; set; }
+        public DbSet<Faq> Faq { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Project>()

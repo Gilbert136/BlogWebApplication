@@ -1,6 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlogWebApplication.Data.Sqlite\BlogWebApplication.Data.Sqlite.csproj" />
     <ProjectReference Include="..\BlogWebApplication.Data\BlogWebApplication.Data.csproj" />
   </ItemGroup>
 

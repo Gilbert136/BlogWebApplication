@@ -10,6 +10,7 @@ namespace BlogWebApplication.Models.IndexViewModels
         public int PageNumber { get; set; }
 
         public IList<Project> Projects { get; set; }
+        public IList<Faq> Faqs { get; set; }
         public Contact Contact { get; set; }
     }
 }
