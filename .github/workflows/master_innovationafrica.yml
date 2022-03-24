@@ -1,16 +1,16 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy - innovationafrica
+name: Build and deploy - techforthecommunity-uat
 
 on:
   push:
     branches:
-      - master
+      - master-uat 
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: innovationafrica       # set this to your application's name
+  AZURE_WEBAPP_NAME: techforthecommunity-uat       # set this to your application's name
   AZURE_WEBAPP_STARTUP_PROJECT: BlogWebApplication
   AZURE_WEBAPP_PACKAGE_PATH: './publish'            # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '5.0.x'                   # set this to the dot net version to use
@@ -48,6 +48,6 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_UAT }}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
