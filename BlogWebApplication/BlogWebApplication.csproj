@@ -29,6 +29,12 @@
     <Folder Include="Database\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Database\localSqliteDB.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>

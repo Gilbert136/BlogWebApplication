@@ -82,7 +82,8 @@
 
               <div class="reply-form">
                 <h4>Leave a Reply</h4>
-                <p>Your email address will not be published. Required fields are marked * </p>
+                @* <p>Your email address will not be published. Required fields are marked * </p> *@
+                <p>Required fields are marked *</p>
                 <form asp-controller="Project" asp-action="Comment">
                   <input asp-for="Project.Id" readonly hidden />
                   <div class="row">
