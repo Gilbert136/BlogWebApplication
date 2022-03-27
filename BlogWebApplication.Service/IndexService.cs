@@ -32,7 +32,7 @@ namespace BlogWebApplication.Service
 
         public async Task<IEnumerable<Faq>> GetFrequentlyAskedQuestion()
         {
-            return await _localSqliteDbContext.Faq.ToListAsync();
+            return await _applicationDbContext.Faq.ToListAsync();
             //return new List<Faq>();
         }
 
