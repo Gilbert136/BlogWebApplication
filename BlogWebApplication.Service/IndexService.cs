@@ -36,8 +36,8 @@ namespace BlogWebApplication.Service
         }
 
         public async Task<Contact> AddContact(Contact contact){
-            _localSqliteDbContext.Add(contact);
-            await _localSqliteDbContext.SaveChangesAsync();
+            ApplicationDbContext.Add(contact);
+            await ApplicationDbContext.SaveChangesAsync();
             return contact;
         }
     }
