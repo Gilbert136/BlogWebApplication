@@ -11,14 +11,16 @@ namespace BlogWebApplication.Service
 {
     public class IndexService : IIndexService
     {
-        private readonly LocalSqliteDbContext _localSqliteDbContext;
+        //private readonly LocalSqliteDbContext _localSqliteDbContext;
         private readonly ApplicationDbContext _applicationDbContext;
 
 
-        public IndexService(ApplicationDbContext applicationDbContext, LocalSqliteDbContext localSqliteDbContext)
+        public IndexService(ApplicationDbContext applicationDbContext
+            //LocalSqliteDbContext localSqliteDbContext
+            )
         {
             _applicationDbContext = applicationDbContext;
-            _localSqliteDbContext = localSqliteDbContext;
+            //_localSqliteDbContext = localSqliteDbContext;
         }
 
         public async Task<IEnumerable<Project>> GetRecentProject()
@@ -32,7 +34,7 @@ namespace BlogWebApplication.Service
 
         public async Task<IEnumerable<Faq>> GetFrequentlyAskedQuestion()
         {
-            return await _localSqliteDbContext.Faq.ToListAsync();
+            return await _applicationDbContext.Faq.ToListAsync();
         }
 
         public async Task<Contact> AddContact(Contact contact){

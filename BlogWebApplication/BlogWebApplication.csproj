@@ -26,10 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Database\localSqliteDB.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

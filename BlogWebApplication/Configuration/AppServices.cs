@@ -19,7 +19,7 @@ namespace BlogWebApplication.Configuration{
     public static class AppServices{
         public static void AddDefaultService(this IServiceCollection serviceCollection, IConfiguration configuration){
             serviceCollection.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("PostgreSqlConnectionString")));
-            serviceCollection.AddDbContext<LocalSqliteDbContext>(opt => opt.UseSqlite(configuration.GetConnectionString("LocalSqliteConnectionString")));
+            //serviceCollection.AddDbContext<LocalSqliteDbContext>(opt => opt.UseSqlite(configuration.GetConnectionString("LocalSqliteConnectionString")));
 
             //var folder = Environment.SpecialFolder.LocalApplicationData;
             //var path = Environment.GetFolderPath(folder);
