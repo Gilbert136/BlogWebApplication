@@ -56,12 +56,12 @@ namespace BlogWebApplication.BusinessManagers
 
             if (projectResult is null) return new NotFoundResult();
 
-            // var faqResult = await _indexService.GetFrequentlyAskedQuestion();
+            var faqResult = await _indexService.GetFrequentlyAskedQuestion();
 
-            // if (faqResult is null) return new NotFoundResult();
+            if (faqResult is null) return new NotFoundResult();
 
             return new IndexViewModel { 
-                //Faqs = faqResult.ToList(),
+                Faqs = faqResult.ToList(),
                 Projects = projectResult.ToList()
             };
         }
