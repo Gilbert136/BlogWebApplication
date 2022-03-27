@@ -32,9 +32,8 @@ namespace BlogWebApplication.Service
 
         public async Task<IEnumerable<Faq>> GetFrequentlyAskedQuestion()
         {
-            //return await _localSqliteDbContext.Faq.ToListAsync();
-            return new List<Faq>();
-
+            return await _localSqliteDbContext.Faq.ToListAsync();
+            //return new List<Faq>();
         }
 
         public async Task<Contact> AddContact(Contact contact){
