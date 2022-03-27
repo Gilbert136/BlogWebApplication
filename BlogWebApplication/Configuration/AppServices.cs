@@ -25,7 +25,7 @@ namespace BlogWebApplication.Configuration{
             //var path = Environment.GetFolderPath(folder);
             //serviceCollection.AddDbContext<LocalSqliteDbContext>(opt => opt.UseSqlite($"Data Source={System.IO.Path.Join(path, "blogging.db")}"));
 
-            serviceCollection.AddDefaultIdentity<ApplicationUser>(opt => opt.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<LocalSqliteDbContext>();
+            serviceCollection.AddDefaultIdentity<ApplicationUser>(opt => opt.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDbContext>();
             serviceCollection.AddControllersWithViews().AddRazorRuntimeCompilation();
             serviceCollection.AddRazorPages();
             serviceCollection.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
