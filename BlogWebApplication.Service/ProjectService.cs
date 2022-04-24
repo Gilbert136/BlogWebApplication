@@ -5,6 +5,8 @@ using BlogWebApplication.Data;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using BlogWebApplication.Data.Sqlite;
+
 
 namespace BlogWebApplication.Service
 {
@@ -12,18 +14,22 @@ namespace BlogWebApplication.Service
     {
         private readonly ApplicationDbContext _applicationDbContext;
 
-        public ProjectService(ApplicationDbContext applicationDbContext){
-            _applicationDbContext = applicationDbContext;
+        private readonly LocalSqliteDbContext _localSqliteDbContext;
+
+
+        public ProjectService(ApplicationDbContext applicationDbContext, LocalSqliteDbContext localSqliteDbContext){
+            // _applicationDbContext = applicationDbContext;
+            _localSqliteDbContext = localSqliteDbContext;
         }
 
         public async Task<Project> Add(Project data){
-            _applicationDbContext.Add(data);
-            await _applicationDbContext.SaveChangesAsync();
+            _localSqliteDbContext.Add(data);
+            await _localSqliteDbContext.SaveChangesAsync();
             return data;
         }
 
         public IEnumerable<Project> GetAll(ApplicationUser applicationUser){
-            return _applicationDbContext.Project
+            return _localSqliteDbContext.Project
             .Include(x => x.Creator)
             .Include(x => x.Approver)
             .Include(x => x.Comments)
@@ -31,7 +37,7 @@ namespace BlogWebApplication.Service
         }
 
         public IEnumerable<Project> GetAll(string searchString){
-            return _applicationDbContext.Project
+            return _localSqliteDbContext.Project
             .OrderByDescending(x => x.UpdatedOn)
             .Include(x => x.Creator)
             .Include(x => x.Comments)
@@ -39,7 +45,7 @@ namespace BlogWebApplication.Service
         }
 
         public async Task<Project> Get(int? id){
-            return await _applicationDbContext.Project
+            return await _localSqliteDbContext.Project
             .Include(x => x.Creator)
             .Include(x => x.Comments).ThenInclude(x => x.Author)
             .Include(x => x.Comments).ThenInclude(x => x.Comments).ThenInclude(x => x.Parent)
@@ -47,21 +53,21 @@ namespace BlogWebApplication.Service
         }
 
         public async Task<Project> Update(Project data){
-            _applicationDbContext.Update(data);
-            await _applicationDbContext.SaveChangesAsync();
+            _localSqliteDbContext.Update(data);
+            await _localSqliteDbContext.SaveChangesAsync();
             return data;
         }
 
         public async Task<Comment> Add(Comment comment)
         {
-            _applicationDbContext.Add(comment);
-            await _applicationDbContext.SaveChangesAsync();
+            _localSqliteDbContext.Add(comment);
+            await _localSqliteDbContext.SaveChangesAsync();
             return comment;
         }
 
         public Comment GetComment(int commentId)
         {
-            return _applicationDbContext.Comment
+            return _localSqliteDbContext.Comment
                 .Include(x => x.Author)
                 .Include(x => x.Post)
                 .Include(x => x.Parent)

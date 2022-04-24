@@ -17,13 +17,13 @@ namespace BlogWebApplication.Service
 
         public IndexService(ApplicationDbContext applicationDbContext, LocalSqliteDbContext localSqliteDbContext)
         {
-            _applicationDbContext = applicationDbContext;
+            // _applicationDbContext = applicationDbContext;
             _localSqliteDbContext = localSqliteDbContext;
         }
 
         public async Task<IEnumerable<Project>> GetRecentProject()
         {
-            return await _applicationDbContext.Project
+            return await _localSqliteDbContext.Project
             .Include(x => x.Creator)
             .Include(x => x.Approver)
             .Include(x => x.Comments)
@@ -32,12 +32,12 @@ namespace BlogWebApplication.Service
 
         public async Task<IEnumerable<Faq>> GetFrequentlyAskedQuestion()
         {
-            return await _applicationDbContext.Faq.ToListAsync();
+            return await _localSqliteDbContext.Faq.ToListAsync();
         }
 
         public async Task<Contact> AddContact(Contact contact){
-            _applicationDbContext.Add(contact);
-            await _applicationDbContext.SaveChangesAsync();
+            _localSqliteDbContext.Add(contact);
+            await _localSqliteDbContext.SaveChangesAsync();
             return contact;
         }
     }

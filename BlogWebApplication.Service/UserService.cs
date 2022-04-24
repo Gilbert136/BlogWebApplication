@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlogWebApplication.Data.Sqlite;
+
 
 namespace BlogWebApplication.Service
 {
@@ -13,20 +15,23 @@ namespace BlogWebApplication.Service
     {
         private readonly ApplicationDbContext _applicationDbContext;
 
-        public UserService(ApplicationDbContext applicationDbContext)
+        private readonly LocalSqliteDbContext _localSqliteDbContext;
+
+        public UserService(ApplicationDbContext applicationDbContext, LocalSqliteDbContext localSqliteDbContext)
         {
-            _applicationDbContext = applicationDbContext;
+            // _applicationDbContext = applicationDbContext;
+            _localSqliteDbContext = localSqliteDbContext;
         }
 
         public ApplicationUser Get(string id)
         {
-            return _applicationDbContext.Users.FirstOrDefault(user => user.Id == id);
+            return _localSqliteDbContext.Users.FirstOrDefault(user => user.Id == id);
         }
 
         public async Task<ApplicationUser> Update(ApplicationUser applicationUser)
         {
-            _applicationDbContext.Update(applicationUser);
-            await _applicationDbContext.SaveChangesAsync();
+            _localSqliteDbContext.Update(applicationUser);
+            await _localSqliteDbContext.SaveChangesAsync();
             return applicationUser;
         }
     }
