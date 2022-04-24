@@ -74,6 +74,100 @@ namespace BlogWebApplication.Data.Sqlite
                  }
             );
 
+
+            modelBuilder.Entity<Project>().HasData(
+                new Project()
+                {
+                    Id = 1,
+                    Title = "Organizational Social And Interactive Application (OSIAS)",
+                    Content = "Organizational Social and Interactive Application System is a browser-based application system which uses web technologies that is accessible on an intranet architecture. The application can be accessed using a web browser on a PC, mobile phone and etc. The application is developed using open source web technologies like HTML, CSS, typescript for the front-end and nodeJS, JavaScript and mongoDB for the back-end.",
+                    Published = true,
+                    CreatedOn = new DateTime(2020, 09, 13),
+                    Category = "Small-Scale Business",
+                    Repository = "https://github.com/Gilbert136/Organizational-Social-And-Interactive-Application-System-OSIAS-.git"
+                },
+                new Project()
+                {
+                    Id = 2,
+                    Title = "Quiz Application System",
+                    // Content = "Organizational Social and Interactive Application System is a browser-based application system which uses web technologies that is accessible on an intranet architecture. The application can be accessed using a web browser on a PC, mobile phone and etc. The application is developed using open source web technologies like HTML, CSS, typescript for the front-end and nodeJS, JavaScript and mongoDB for the back-end.",
+                    Published = true,
+                    CreatedOn = new DateTime(2020, 12, 23),
+                    Category = "Education",
+                    Repository = "https://github.com/Gilbert136/QuizApplication.git"
+                },
+                new Project()
+                {
+                    Id = 3,
+                    Title = "GasMe Application System - Backend",
+                    // Content = "Organizational Social and Interactive Application System is a browser-based application system which uses web technologies that is accessible on an intranet architecture. The application can be accessed using a web browser on a PC, mobile phone and etc. The application is developed using open source web technologies like HTML, CSS, typescript for the front-end and nodeJS, JavaScript and mongoDB for the back-end.",
+                    Published = true,
+                    Category = "Small-Scale Business",
+                    CreatedOn = new DateTime(2021, 01, 02),
+                    Repository = "https://github.com/Gilbert136/GasMe.Server.git"
+                },
+                new Project()
+                {
+                    Id = 4,
+                    Title = "GasMe Application System - Frontend",
+                    // Content = "Organizational Social and Interactive Application System is a browser-based application system which uses web technologies that is accessible on an intranet architecture. The application can be accessed using a web browser on a PC, mobile phone and etc. The application is developed using open source web technologies like HTML, CSS, typescript for the front-end and nodeJS, JavaScript and mongoDB for the back-end.",
+                    Published = true,
+                    Category = "Small-Scale Business",
+                    CreatedOn = new DateTime(2021, 01, 08),
+                    Repository = "https://github.com/Gilbert136/GasMe.ReactNative.git"
+                },
+                new Project()
+                {
+                    Id = 5,
+                    Title = "Student Management System - Backend",
+                    // Content = "Organizational Social and Interactive Application System is a browser-based application system which uses web technologies that is accessible on an intranet architecture. The application can be accessed using a web browser on a PC, mobile phone and etc. The application is developed using open source web technologies like HTML, CSS, typescript for the front-end and nodeJS, JavaScript and mongoDB for the back-end.",
+                    Published = true,
+                    Category = "Education",
+                    CreatedOn = new DateTime(2021, 05, 19),
+                    Repository = "https://github.com/Gilbert136/StudentManagementSystem.git"
+                },
+                new Project()
+                {
+                    Id = 6,
+                    Title = "Student Management System - Frontend",
+                    // Content = "Organizational Social and Interactive Application System is a browser-based application system which uses web technologies that is accessible on an intranet architecture. The application can be accessed using a web browser on a PC, mobile phone and etc. The application is developed using open source web technologies like HTML, CSS, typescript for the front-end and nodeJS, JavaScript and mongoDB for the back-end.",
+                    Published = true,
+                    Category = "Education",
+                    CreatedOn = new DateTime(2021, 05, 22),
+                    Repository = "https://github.com/Gilbert136/StudentManagementSystem.Web.git"
+                },
+                new Project()
+                {
+                    Id = 7,
+                    Title = "Clean The Environment Management System",
+                    // Content = "Organizational Social and Interactive Application System is a browser-based application system which uses web technologies that is accessible on an intranet architecture. The application can be accessed using a web browser on a PC, mobile phone and etc. The application is developed using open source web technologies like HTML, CSS, typescript for the front-end and nodeJS, JavaScript and mongoDB for the back-end.",
+                    Published = true,
+                    Category = "Environment",
+                    CreatedOn = new DateTime(2021, 12, 17),
+                    Repository = "https://github.com/Gilbert136/CleanTheEnvironment.git"
+                },
+                new Project()
+                {
+                    Id = 8,
+                    Title = "Diary Application System",
+                    // Content = "Organizational Social and Interactive Application System is a browser-based application system which uses web technologies that is accessible on an intranet architecture. The application can be accessed using a web browser on a PC, mobile phone and etc. The application is developed using open source web technologies like HTML, CSS, typescript for the front-end and nodeJS, JavaScript and mongoDB for the back-end.",
+                    Published = true,
+                    Category = "Education",
+                    CreatedOn = new DateTime(2022, 01, 13),
+                    Repository = "https://github.com/Gilbert136/DiaryApp.git"
+                },
+                new Project()
+                {
+                    Id = 9,
+                    Title = "School Bus Transportation Application System",
+                    // Content = "Organizational Social and Interactive Application System is a browser-based application system which uses web technologies that is accessible on an intranet architecture. The application can be accessed using a web browser on a PC, mobile phone and etc. The application is developed using open source web technologies like HTML, CSS, typescript for the front-end and nodeJS, JavaScript and mongoDB for the back-end.",
+                    Published = true,
+                    Category = "Education",
+                    CreatedOn = new DateTime(2022, 02, 24),
+                    Repository = "https://github.com/Gilbert136/SchoolBusTransportationSystem.git"
+                }
+            );
+
             base.OnModelCreating(modelBuilder);
         }
     }

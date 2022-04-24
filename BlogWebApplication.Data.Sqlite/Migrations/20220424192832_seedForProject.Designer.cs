@@ -3,14 +3,16 @@ using System;
 using BlogWebApplication.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlogWebApplication.Data.Sqlite.Migrations
 {
     [DbContext(typeof(LocalSqliteDbContext))]
-    partial class LocalSqliteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220424192832_seedForProject")]
+    partial class seedForProject
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
